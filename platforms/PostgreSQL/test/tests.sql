@@ -10,7 +10,7 @@
 \c <<$db_name$>> user_<<$app_name$>>_owner
 
 SET search_path TO sch_<<$app_name$>>, public; -- sets only for current session
-
+SET ECHO to query;
 SELECT * FROM test;
 
 -- make sure this script doesn't output too much data - it all goes to log.
