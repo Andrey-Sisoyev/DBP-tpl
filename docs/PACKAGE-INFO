@@ -1,0 +1,38 @@
+Name: tpl
+Description: 
+      DB package template. Use it to derive your specific DB packages.
+Version: 0.1
+License: BSD3
+Copyright: Copyright (c) 2010 Andrejs Sisojevs
+License-File: docs/licence/COPYRIGHT
+Author: Andrejs Sisojevs <andrejs.sisojevs@nextmail.ru>
+Maintainer: Andrejs Sisojevs <andrejs.sisojevs@nextmail.ru>
+Stability: stable
+Homepage: http://github.com/Andrey-Sisoyev/DBP-tpl
+Category: Database
+Tested-With: ArchLinux, PostgreSQL v8.4
+Depends-on: -
+Files-root-directory: ./..
+Files: 
+    db_inst.sh
+    docs/PACKAGE-INFO
+    docs/HOWTO
+    docs/STANDARD
+    docs/licence/COPYRIGHT
+    docs/PACKAGE-INFO
+    docs/examples/inst_Language.sh
+    docs/examples/Name-0.1.tar.bz2
+    docs/examples/Language-0.1.tar.bz2
+    platforms/PostgreSQL/init_db.sql
+    platforms/PostgreSQL/init_schema.sql
+    platforms/PostgreSQL/structure.sql
+    platforms/PostgreSQL/data.sql
+    platforms/PostgreSQL/test/tests.sql
+    platforms/PostgreSQL/Linux/db_inst.sql
+Manual: 
+    docs/HOWTO
+Executables: 
+    db_inst.sh
+    platforms/PostgreSQL/Linux/db_inst.sql
+    docs/examples/inst_Language.sh
+
