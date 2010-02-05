@@ -1,0 +1,33 @@
+0.1
+--------------------------------------------
+* First prototype version of DB packager
+
+
+Changes from 0.1 to 0.2
+--------------------------------------------
+* New version of STANDARD (0.2)
+* Added metadata control - now packager is able to control information 
+  of what (DB/application/package) is installed, and based 
+  on which version of standard
+* Installer now handles more commands. I old version it was 
+      {new,existent} x {new,existent} 
+      for (DB x Application)
+  , but now it's
+      {drop,new,overwrite,existent,list} x
+      {drop,new,overwrite,existent,list} x
+      {drop,new,overwrite,existent}
+      for (DB x Application x Package)
+* Major package structure advancement. DDL scrips separated into DROP and INIT
+  parts.
+
+
+Changes from 0.2 to 0.3
+--------------------------------------------
+* Now there are two states of package: packed and unpacked.
+  Older version had only unpacked. In packed state is easier to concetrate on
+  package "business" content. In unpacked state it's easier to develope
+  newer versions of STANDARD.
+* PKG-INFO file doesn't contain a list of files anymore. 
+  Due to arising complexities, when transfering between "packed" and "unpacked"
+  states.
+
