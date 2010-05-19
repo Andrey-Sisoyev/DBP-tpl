@@ -33,7 +33,7 @@ BEGIN
 END;
 $$;
 
-COMMENT ON FUNCTION pkg_<<$pkg.name_p$>>_<<$pkg.ver_p$>>__initial_data_insert__() IS
+COMMENT ON FUNCTION pkg_<<$pkg.name_p$>>_<<$pkg.ver_p$>>__initial_data_delete__() IS
 'Deletes initial data from the database package "<<$pkg.name$>>" (version "<<$pkg.ver$>>").
 This data is considered to be a part of the package.
 Data is assumed to be inserted using "pkg_<<$pkg.name_p$>>_<<$pkg.ver_p$>>__initial_data_insert__()" function.

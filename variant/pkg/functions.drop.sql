@@ -42,5 +42,5 @@ DROP FUNCTION IF EXISTS dbp_helloworld_testfun(par_pk1 integer, par_pk2 integer)
 
 \echo NOTICE >>>>> functions.drop.sql [END]
 
-\i functions/module1.drop.sql
-\i functions/module2.drop.sql
+\i modules/module1.drop.sql
+\i modules/module2.drop.sql

@@ -14,7 +14,7 @@ SET search_path TO sch_<<$app_name$>>, comn_funs, public;
 
 \echo NOTICE >>>>> data.drop.sql [BEGIN]
 
-SELECT pkg_<<$pkg.nam_pe$>>_<<$pkg.ver_p$>>__initial_data_delete__();
+SELECT pkg_<<$pkg.name_p$>>_<<$pkg.ver_p$>>__initial_data_delete__();
 DROP FUNCTION IF EXISTS pkg_<<$pkg.name_p$>>_<<$pkg.ver_p$>>__initial_data_insert__();
 DROP FUNCTION IF EXISTS pkg_<<$pkg.name_p$>>_<<$pkg.ver_p$>>__initial_data_delete__();
 

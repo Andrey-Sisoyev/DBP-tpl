@@ -52,7 +52,7 @@ CREATE TABLE dbp_helloworld (
          pk integer NOT NULL DEFAULT nextval('dbp_helloworld_pk_seq') PRIMARY KEY
        , f1 varchar     NULL
        , f2 varchar     NULL
-       , code_id integer NOT NULL
+--       , code_id integer NOT NULL
 --       , CONSTRAINT cnstr_dbp_helloworld_has_a_codifier FOREIGN KEY (code_id)
 --                   REFERENCES codes (code_id) ON DELETE RESTRICT ON UPDATE CASCADE
 --       , CHECK (code_belongs_to_codifier(
@@ -77,5 +77,5 @@ GRANT SELECT                         ON TABLE dbp_helloworld TO user_db<<$db_nam
 -- Sometimes we want to insert some data, before creating triggers.
 
 \i functions.init.sql
-\i ../data/data.sql
+\i ../data/data.init.sql
 \i triggers.init.sql
