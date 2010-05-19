@@ -42,7 +42,7 @@ SELECT * FROM dbp_helloworld;
 
 \echo
 \echo --------------------------------------------------------------
-\echo NOTICE >>>>>> Testing functions data cleanup
+\echo NOTICE >>>>>> Testing functions
 
 \c <<$db_name$>> user_db<<$db_name$>>_app<<$app_name$>>_data_admin
 
