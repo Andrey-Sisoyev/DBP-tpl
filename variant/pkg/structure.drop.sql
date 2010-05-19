@@ -7,8 +7,6 @@
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 
-\i functions.drop.sql
-
 \c <<$db_name$>> user_db<<$db_name$>>_app<<$app_name$>>_owner
 
 SET search_path TO sch_<<$app_name$>>; -- , comn_funs, public; -- sets only for current session
