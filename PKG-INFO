@@ -1,8 +1,9 @@
 Name: DBP-tpl
 Description: 
       DB package template. Use it to derive your specific DB packages.
-      See examples in neighbor repositories (DBP-Name, DBP-Language, etc)
-Version: 0.3
+      See examples in neighbor repositories (DBP-Codifier, 
+      DBP-Person-Contact, DBP-Config etc).
+Version: 0.4
 License: BSD3
 Copyright: Copyright (c) 2010 Andrejs Sisojevs
 License-File: variant/docs/licence/COPYRIGHT

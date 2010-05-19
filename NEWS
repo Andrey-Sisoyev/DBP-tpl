@@ -31,3 +31,76 @@ Changes from 0.2 to 0.3
   Due to arising complexities, when transfering between "packed" and "unpacked"
   states.
 
+Changes from 0.3 to 0.4
+--------------------------------------------
+* New version of standard (v0.2 -> v0.3). In new standard version 
+     ++ DB name and application name are 
+        prohibited to contain '-' and '.' symbols ([_a-z0-9][_a-z0-9]). 
+     ++ Package name and version are now also 
+        constrainted with [_a-zA-Z0-9][-_a-zA-Z0-9.]
+     ++ Somtimes we want to use package name and version 
+        in function (or other object) name. 
+        That's why two new variables are introduced: 
+           <<$pkg.name_p$>> = <<$pkg.name$>> lowercased and '-','.' -> '_'
+           <<$pkg.ver_p$>>  = <<$pkg.ver$>>  lowercased and '-','.' -> '_'
+  Respective changes in scripts.
+* Every database now will have special additional public schema "comn_funs"
+  containing additional general purpose functions for common use. 
+  It is expected, that as DBP-tpl version grows, this schema wil get richer.
+  Valuable contributions are welcome.
+* No more type "sch_<<$app_name$>>.t_namespace_info" will there be.
+  Instead "comn_funs.t_namespace_info". 
+  Function "leave_schema_namespace(t_namespace_info)" is also located 
+  in "comn_funs" now.
+  Instead of using "enter_schema_namespace" and "leave_schema_namespace" it
+  is now recommended practice to use decladation of following template:
+     ==============
+     CREATE OR REPLACE FUNCTION <my_func>(<params>) RETURNS <return_type> 
+     [IMMUTABLE] [STRICT] LANGUAGE <language_name>
+     SET search_path TO <schema_name> --, comn_funs, public -- last two if needed
+     AS $$ 
+     ... 
+     $$;
+     ==============
+* Application user names now different:
+     user_<<$app_name$>>_owner         ->  user_db<<$db_name$>>_app<<$app_name$>>_owner
+     user_<<$app_name$>>_data_admin    ->  user_db<<$db_name$>>_app<<$app_name$>>_data_admin
+     user_<<$app_name$>>_data_reader   ->  user_db<<$db_name$>>_app<<$app_name$>>_data_reader
+  Rationale: 
+     Roles transcend databases - they are declared on whole DBMS clusters.
+     So we don't want unexpected coincedences.
+* Application users now has default 
+  "search_path" value = "sch_<<$app_name$>>, comn_funs, public"
+* Richer package template. Major additions: 
+     ++ triggers are now created in separate script
+     ++ data is now separated on data.init and data.drop parts
+     ++ functions are now separated on multiple modules
+     ++ testing part now consists of multiple subscripts for
+          prepare (load_data -> init_testcases) -> test_functions  
+                                                -> test_modules 
+                                                -> test_triggers -> cleanup
+* In documents added new document (OpenOffice.Calc) template "API-List", 
+  where functions are listed and catalogized by modules. 
+  GRANTs and DROPs are actually generated there. 
+* ERD model template has richer teplate now. 
+  Added notion of configurable entity andconfiguration. 
+  Separated notion of codifier and enum.
+* The problem with phantom roles solved. Previously, if DB was dropped
+  without dropping applications and packages first
+  application-specific roles were assummed to be dropped by cascade.
+  That was a mistake, since roles are defined in DB cluster, not in a 
+  single DB.
+  Now all dependant roles are to be (un)registered using functions:
+    ** FUNCTION register_role_tobe_dependant_on_current_db(
+         par_role_name                           varchar
+       , par_drop_it_by_cascade_when_dropping_db boolean
+       )
+    ** FUNCTION unregister_role_thatwere_dependant_on_current_db(
+         par_role_name varchar
+       )
+  When DB is dropped using current DBP packaging framework, 
+  the dependant roles are dropped by cascade.
+* DBP packaging system now requires additional supplied module: dblink
+  This module must be installed in the default DB (which is)
+  It is a standard addition to PostgreSQL, information about it to be found
+  on official site.
