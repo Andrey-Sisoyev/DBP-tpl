@@ -25,6 +25,9 @@ SET search_path TO sch_<<$app_name$>>, comn_funs, public; -- sets only for curre
 
 \echo NOTICE >>>>> functions.init.sql [BEGIN]
 
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
 -- CREATE TYPE ...
 -- CREATE OR REPLACE FUNCTION ...
 
@@ -42,5 +45,8 @@ END;
 $$;
 
 GRANT EXECUTE ON FUNCTION dbp_helloworld_testfun(par_pk1 integer, par_pk2 integer) TO user_db<<$db_name$>>_app<<$app_name$>>_data_admin, user_db<<$db_name$>>_app<<$app_name$>>_data_reader;
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 
 \echo NOTICE >>>>> functions.init.sql [END]

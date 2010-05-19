@@ -8,11 +8,12 @@
 --------------------------------------------------------------------------
 
 \echo NOTICE >>>>>> tests.prepare.sql [BEGIN]
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
 \echo NOTICE >>>>>> Create table where testcases will be kept and functions to insert and cleanup test cases.
 \echo
-
----------------------------
----------------------------
 
 CREATE TABLE pkg_<<$pkg.name_p$>>_<<$pkg.ver_p$>>__testcases (
         tc_id               integer NOT NULL
@@ -64,5 +65,8 @@ $$;
 \echo
 
 SELECT pkg_<<$pkg.name_p$>>_<<$pkg.ver_p$>>__integrate_testcases();
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 
 \echo NOTICE >>>>>> tests.prepare.sql [END]

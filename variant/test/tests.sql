@@ -12,10 +12,12 @@
 SET search_path TO sch_<<$app_name$>>, comn_funs, public;
 SELECT set_config('client_min_messages', 'NOTICE', FALSE);
 
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
 \echo NOTICE >>>>>> tests.sql [BEGIN]
 \echo WARNING!!! This tester is not guaranteed to be safe for user data (if not said otherwise in package info file) - do not apply it where user already defined it's codes!!
 
---------------------------------------------------------------------------
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 
@@ -82,5 +84,8 @@ SELECT * FROM dbp_helloworld;
 
 \echo NOTICE >>>>>> Testing finished.
 \echo --------------------------------------------------------------
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 
 \echo NOTICE >>>>>> tests.sql [END]

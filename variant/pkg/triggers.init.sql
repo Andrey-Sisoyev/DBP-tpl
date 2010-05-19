@@ -9,6 +9,9 @@
 
 \echo NOTICE >>>>> triggers.init.sql [BEGIN]
 
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
 -- CREATE OR REPLACE FUNCTION myobject_onaction() RETURNS trigger
 -- LANGUAGE plpgsql
 -- AS $myobject_onaction$ -- before delete
@@ -20,5 +23,8 @@
 
 -- CREATE TRIGGER tri_myobject_onaction BEFORE INSERT OR DELETE ON sch_<<$app_name$>>.myobject_table
 --     FOR EACH ROW EXECUTE PROCEDURE myobject_onaction();
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 
 \echo NOTICE >>>>> triggers.init.sql [END]

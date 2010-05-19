@@ -35,6 +35,9 @@ DELETE FROM dbp_packages WHERE package_name = '<<$pkg.name$>>'
 
 \echo NOTICE >>>>> structure.drop.sql [BEGIN]
 
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
 DROP TABLE IF EXISTS dbp_helloworld;
 DROP SEQUENCE IF EXISTS dbp_helloworld_pk_seq;
 
@@ -45,5 +48,8 @@ DROP SEQUENCE IF EXISTS dbp_helloworld_pk_seq;
 --             , TRUE -- par_cascade_remove_subcodes
 --             , TRUE -- par_if_cascade__only_ones_not_reachable_from_elsewhere
 --             );
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 
 \echo NOTICE >>>>> structure.drop.sql [END]

@@ -16,10 +16,8 @@ SET search_path TO sch_<<$app_name$>>, comn_funs, public;
 
 \echo NOTICE >>>>> data.init.sql [BEGIN]
 
-\set ECHO none
-
--------------------
--------------------
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 
 CREATE OR REPLACE FUNCTION pkg_<<$pkg.name_p$>>_<<$pkg.ver_p$>>__initial_data_delete__() RETURNS integer
 LANGUAGE plpgsql
@@ -62,8 +60,8 @@ Data is assumed to be possible to delete the initial data using "pkg_<<$pkg.name
 Also, this deletion function is called in the beginning of inserting function.
 ';
 
--------------------
--------------------
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 
 SELECT set_config('client_min_messages', 'NOTICE', FALSE);
 
@@ -71,7 +69,7 @@ SELECT set_config('client_min_messages', 'NOTICE', FALSE);
 SELECT pkg_<<$pkg.name_p$>>_<<$pkg.ver_p$>>__initial_data_insert__();
 \set ECHO none
 
--------------------
--------------------
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 
 \echo NOTICE >>>>> data.init.sql [END]
