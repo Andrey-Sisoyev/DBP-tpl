@@ -31,6 +31,7 @@ Changes from 0.2 to 0.3
   Due to arising complexities, when transfering between "packed" and "unpacked"
   states.
 
+
 Changes from 0.3 to 0.4
 --------------------------------------------
 * New version of standard (v0.2 -> v0.3). In new standard version 
@@ -104,3 +105,21 @@ Changes from 0.3 to 0.4
   This module must be installed in the default DB (which is)
   It is a standard addition to PostgreSQL, information about it to be found
   on official site.
+
+
+Changes from 0.4 to 0.5
+--------------------------------------------
+* Added in "Common Functions" library (which is "comn_funs" schema) function
+     __halt(par_tag varchar, par_str anyelement) RETURNS anyelement
+  (Yes, I know there is a standard function to raise exception from SELECT, 
+   but I found it a bit complicated... besides, this one is similar 
+   to my __watch function)
+* Better template for ERD diagram:
+     ++ Solved the sick issue with ERD legend - added "word wrap" in some 
+        rectangles... Geez, some OO bugs are soo awful! 
+        I wonder, if M$ bought them.
+     ++ Added some elements: 
+        +++ trigger
+        +++ trigger action-link
+        +++ materialized view
+        +++ deeply-weak entity

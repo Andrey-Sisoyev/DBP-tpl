@@ -3,13 +3,13 @@ Description:
       DB package template. Use it to derive your specific DB packages.
       See examples in neighbor repositories (DBP-Codifier, 
       DBP-Person-Contact, DBP-Config etc).
-Version: 0.4
+Version: 0.5
 License: BSD3
 Copyright: Copyright (c) 2010 Andrejs Sisojevs
 License-File: variant/docs/licence/COPYRIGHT
 Author: Andrejs Sisojevs <andrejs.sisojevs@nextmail.ru>
 Maintainer: Andrejs Sisojevs <andrejs.sisojevs@nextmail.ru>
-Stability: beta
+Stability: stable
 Homepage: http://github.com/Andrey-Sisoyev/DBP-tpl
 Category: Database
 Tested-With: ArchLinux, PostgreSQL v8.4
