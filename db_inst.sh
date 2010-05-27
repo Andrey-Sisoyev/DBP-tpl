@@ -1,4 +1,4 @@
-#!/bin/sh  
+#!/bin/sh
 #
 # Copyright (C) 2010 Andrejs Sisojevs <andrejs.sisojevs@nextmail.ru>
 #
@@ -28,7 +28,7 @@ function unpack()
         if [ ! $? -eq 0 ]; then
                echo "Can't create '$unpacked_dir' directory, where to make a unpacked version (consider using 'clean' modifier to 'rm -rf ...', if direrectory already exists)."
                echo "Aborting."
-               exit 1 
+               exit 1
         fi
 
         tar xjf invariant.tar.bz2 -C "$unpacked_dir/"
